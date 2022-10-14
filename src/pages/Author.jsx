@@ -23,6 +23,8 @@ const Author = () => {
     fetchData();
     window.scrollTo(0, 0);
   }, []);
+
+  console.log(isData)
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
@@ -43,7 +45,7 @@ const Author = () => {
                     <div className="de-flex-col">
                       <div className="profile_avatar">
                         {loading === false ? (
-                          <img src={isData.authorImage} alt="" />
+                          <img src={isData?.authorImage} alt="" />
                         ) : (
                           <Skeleton
                             width="150px"
