@@ -6,7 +6,7 @@ import axios from "axios";
 import Skeleton from "../components/UI/Skeleton";
 const Author = () => {
   const { id } = useParams();
-  const [isData, setIsData] = useState([]);
+  const [isData, setIsData] = useState("");
   const [loading, setLoading] = useState(true);
   const [following, setFollowing] = useState(false);
 
@@ -23,7 +23,6 @@ const Author = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log(isData, loading);
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
@@ -43,7 +42,7 @@ const Author = () => {
                 <div className="d_profile de-flex">
                   <div className="de-flex-col">
                     <div className="profile_avatar">
-                      {loading === false ? (
+                      {isData ? (
                         <img src={isData?.authorImage} alt="" />
                       ) : (
                         <Skeleton
