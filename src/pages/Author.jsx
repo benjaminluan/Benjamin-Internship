@@ -9,11 +9,25 @@ const Author = () => {
   const [isData, setIsData] = useState("");
   const [loading, setLoading] = useState(true);
   const [following, setFollowing] = useState(false);
-
   async function fetchData() {
-    const { data } = await axios.get(
-      `https:us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
-    );
+    const { data } = await axios
+      .get(
+        `https:us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
+      )
+      .catch(function (error) {
+        if (error.response) {
+          // Request made and server responded
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log("Error", error.message);
+        }
+      });
     setIsData(data);
     setLoading(false);
   }
