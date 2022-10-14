@@ -15,7 +15,7 @@ const ItemDetails = () => {
     );
     setIsData(data);
   }
-
+  console.log(isData);
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchData();
@@ -56,7 +56,7 @@ const ItemDetails = () => {
                           <h6>Owner</h6>
                           <div className="item_author">
                             <div className="author_list_pp">
-                              <Link to="/author">
+                              <Link to={`/author/${isData.ownerId}`}>
                                 <img
                                   className="lazy"
                                   src={isData.ownerImage}
@@ -77,7 +77,7 @@ const ItemDetails = () => {
                           <h6>Creator</h6>
                           <div className="item_author">
                             <div className="author_list_pp">
-                              <Link to="/author">
+                              <Link to={`/author/${isData.creatorId}`}>
                                 <img
                                   className="lazy"
                                   src={isData.creatorImage}
