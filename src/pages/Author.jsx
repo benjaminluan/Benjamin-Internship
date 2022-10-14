@@ -10,7 +10,7 @@ const Author = () => {
   const [isData, setIsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [following, setFollowing] = useState(false);
-  
+
   async function fetchData() {
     const { data } = await axios.get(
       `https:us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
@@ -23,7 +23,6 @@ const Author = () => {
     fetchData();
     window.scrollTo(0, 0);
   }, []);
-
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
@@ -36,7 +35,6 @@ const Author = () => {
           data-bgimage="url(images/author_banner.jpg) top"
           style={{ background: `url(${AuthorBanner}) top` }}
         ></section>
-        {
           <section aria-label="section">
             <div className="container">
               <div className="row">
@@ -129,7 +127,6 @@ const Author = () => {
               </div>
             </div>
           </section>
-        }
       </div>
     </div>
   );

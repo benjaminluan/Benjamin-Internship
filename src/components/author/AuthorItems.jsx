@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Skeleton from "../UI/Skeleton";
 
 const AuthorItems = ({ authorData }) => {
-  console.log(authorData);
   return (
     <div className="de_tab_content">
       <div className="tab-1">
