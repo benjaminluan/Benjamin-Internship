@@ -12,7 +12,7 @@ const Author = () => {
   async function fetchData() {
     const { data } = await axios
       .get(
-        `https:us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
+        `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
       )
       .catch(function (error) {
         if (error.response) {
@@ -28,11 +28,10 @@ const Author = () => {
           console.log("Error", error.message);
         }
       });
+      console.log(data)
     setIsData(data);
     setLoading(false);
   }
-  console.log(isData.authorName)
-  console.log(isData)
   useEffect(() => {
     fetchData();
     window.scrollTo(0, 0);
