@@ -32,6 +32,7 @@ const Author = () => {
     setLoading(false);
   }
   console.log(isData.authorName)
+  console.log(isData)
   useEffect(() => {
     fetchData();
     window.scrollTo(0, 0);
