@@ -15,7 +15,6 @@ const ItemDetails = () => {
     );
     setIsData(data);
   }
-  console.log(isData);
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchData();
