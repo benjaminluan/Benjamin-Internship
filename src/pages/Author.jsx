@@ -28,7 +28,6 @@ const Author = () => {
           console.log("Error", error.message);
         }
       });
-      console.log(data)
     setIsData(data);
     setLoading(false);
   }
